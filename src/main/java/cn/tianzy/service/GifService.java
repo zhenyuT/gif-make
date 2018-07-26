@@ -119,7 +119,8 @@ public class GifService {
             }
             root.put("mx", mx);
 
-            try (FileWriter writer = new FileWriter(assPath)) {
+//            try (FileWriter writer = new FileWriter(assPath)) {
+            try (Writer writer = new OutputStreamWriter(new FileOutputStream(assPath), "UTF-8");) {
                 Template temp = cfg.getTemplate("template.ftl");
                 temp.process(root, writer);
             } catch (Exception e) {
@@ -171,7 +172,9 @@ public class GifService {
             Map<String, Object> root = new HashMap<>();
             root.put("sentences", sentenceInfos);
 
-            try (FileWriter writer = new FileWriter(targetFtlPath)) {
+//            try (FileWriter writer = new FileWriter(targetFtlPath)) {
+            try (Writer writer = new OutputStreamWriter(new FileOutputStream(targetFtlPath), "UTF-8");) {
+
                 cfg.setDirectoryForTemplateLoading(new File(totalFtlPath).getParentFile());
                 Template temp = cfg.getTemplate("totalTemplate.ftl");
                 temp.process(root, writer);
