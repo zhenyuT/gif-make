@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>为所欲为</title>
 
@@ -41,7 +41,7 @@
                         <div class="tab-pane <#if gif_index==0>active</#if> " id="panel-${gif_index}">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img class="center-block img-responsive" alt="${gif.gifConfig.gifName}" src="${gif.gifConfig.previewImg}">
+                                    <img class="center-block img-responsive" alt="${gif.gifConfig.gifName}" src="${request.contextPath}/${gif.gifConfig.previewImg}">
                                 </div>
                                 <div class="col-md-6">
                                     <form class="form-horizontal" role="form">
@@ -154,7 +154,7 @@
 
 		$.ajax({
 			type: "POST",
-			url: "/gif/filePath",
+			url: "${request.contextPath}/gif/filePath",
 			data: JSON.stringify(json),
 			contentType: "application/json",
 			dataType: 'json'
@@ -180,7 +180,7 @@
         var gifId = $('#gifId').val();
 		$.ajax({
             type: "POST",
-            url: "/gif/delGif",
+            url: "${request.contextPath}/gif/delGif",
             data: {
                 gifId: gifId
 			},
