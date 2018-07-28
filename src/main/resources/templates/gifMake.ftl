@@ -18,7 +18,6 @@
 </head>
 <body>
 
-
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
@@ -198,7 +197,7 @@
         formData.delete("startTime");
         formData.delete("endTime");
         $.ajax({
-            url: "/gif/makeGif",
+            url: "${request.contextPath}/gif/makeGif",
             type: "POST",
             data: formData,
             processData: false,

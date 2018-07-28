@@ -247,7 +247,7 @@ public class GifService {
             FileUtils.deleteDirectory(new File(publicDir));
             if(gifConfig.getPreviewImg().startsWith("/")){
                 String previewImgUrl = publicPath + gifConfig.getPreviewImg();
-                FileUtils.deleteDirectory(new File(previewImgUrl));
+                FileUtils.forceDelete(new File(previewImgUrl));
             }
         } catch (IOException e) {
             logger.error("", e);
