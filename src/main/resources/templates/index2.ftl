@@ -17,7 +17,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h1>
-				动图制作Java版
+				动图制作
                 <a href="gif_make" target="_blank"  type="button" class="btn btn-primary btn-lg center-block">
                     自制动图
                 </a>
